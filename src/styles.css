@@ -1,51 +1,65 @@
 * {
   margin: 0;
   padding: 0;
-};
+}
+
+.country-search {
+  font-size: 24px;
+  border: 1px #000000 solid;
+  text-align: center;
+}
 
 .country-list {
   list-style: none;
   font-size: 14px;
-};
+}
 
 .country-info {
   width: 80%;
-};
+}
 
 .country-name {
-  font-size: 24px;
+  font-size: 36px;
   text-align: center;
-};
+  margin-bottom: 20px;
+}
 
 .country-detail {
-  font-size: 16px;
+  font-size: 24px;
   width: 50%;
-};
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 5%;
+}
 
 .label {
   font-weight: bold;
-};
+}
 
-/* .country-capital {
-
-};
+.country-capital {
+margin-bottom: 16px;
+}
 
 .country-population {
-
-}; */
+margin-bottom: 16px;
+}
 
 .languages {
   list-style: circle;
-};
+  margin-bottom: 10px;
+}
 
 .lang {
   font-style: italic;
-};
+  margin-left: 20px;
+}
 
 .country-flag {
-  width: 50%;
-};
+  display: inline-block;
+  width: 40%;
+}
 
 .flag {
+  width: 100%;
   height: auto;
-};
+}
