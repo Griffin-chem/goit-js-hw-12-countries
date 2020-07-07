@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+};
+
+.country-list {
+  list-style: none;
+  font-size: 14px;
+};
+
+.country-info {
+  width: 80%;
+};
+
+.country-name {
+  font-size: 24px;
+  text-align: center;
+};
+
+.country-detail {
+  font-size: 16px;
+  width: 50%;
+};
+
+.label {
+  font-weight: bold;
+};
+
+/* .country-capital {
+
+};
+
+.country-population {
+
+}; */
+
+.languages {
+  list-style: circle;
+};
+
+.lang {
+  font-style: italic;
+};
+
+.country-flag {
+  width: 50%;
+};
+
+.flag {
+  height: auto;
+};
