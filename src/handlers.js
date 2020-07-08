@@ -5,9 +5,6 @@ import {
   fetchCountries
 } from './fetchCountries';
 
-
-let request = '';
-
 const res = {
   list: document.querySelector('.country-list'),
   country: document.querySelector('.country-info'),
@@ -37,15 +34,14 @@ const handleInput = function (listArray) {
       break;
     default:
       PNotify.error({
-        title: 'Oh No!',
-        text: 'Something terrible happened.'
+        text: 'Too many matches found. Please, specify request.'
       });
       break;
   };
 };
 
 const handleRequest = function () {
-  request = res.input.value;
+  const request = res.input.value;
   res.list.innerHTML='';
   res.country.innerHTML='';
   fetchCountries(request).then(data => {
