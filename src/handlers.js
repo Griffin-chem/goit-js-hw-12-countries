@@ -49,7 +49,6 @@ const handleRequest = function () {
   res.list.innerHTML = '';
   res.country.innerHTML = '';
   fetchCountries(request).then(data => {
-    console.log(data);
     handleInput(data)
   });
 }
