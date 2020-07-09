@@ -1,9 +1,12 @@
 import countryTemplate from './templates/country.hbs';
-import * as PNotify from '@pnotify/core';
 import * as _ from 'lodash';
 import {
   fetchCountries
 } from './fetchCountries';
+import {
+  showTooMany,
+  showNoMatches
+} from './notification';
 
 const res = {
   list: document.querySelector('.country-list'),
@@ -26,29 +29,29 @@ const showCountryDetail = function (listArray) {
 const handleInput = function (listArray) {
   const check = listArray.length;
   switch (true) {
+    case (check === 0):
+      showNoMatches();
+      break;
     case (check === 1):
       showCountryDetail(listArray);
       break;
-    case (check>=2 && check <= 10):
+    case (check >= 2 && check <= 10):
       showCountryList(listArray);
       break;
     default:
-      PNotify.error({
-        text: 'Too many matches found. Please, specify request.'
-      });
+      showTooMany();
       break;
   };
 };
 
 const handleRequest = function () {
   const request = res.input.value;
-  res.list.innerHTML='';
-  res.country.innerHTML='';
+  res.list.innerHTML = '';
+  res.country.innerHTML = '';
   fetchCountries(request).then(data => {
     console.log(data);
     handleInput(data)
   });
-
 }
 
 const handleRequestDebounce = _.debounce(handleRequest, 500);

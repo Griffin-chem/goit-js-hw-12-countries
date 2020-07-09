@@ -7,6 +7,10 @@ export const fetchCountries = function (searchQuery) {
       },
     })
     .then(response => {
-      return response.json()
+      if (response.status !== 200) {
+        return response = []
+      } else {
+        return response.json()
+      };
     })
 };
